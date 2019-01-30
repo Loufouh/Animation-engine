@@ -22,7 +22,7 @@ function loop() {
 		dist = 0;
 	
 	if(currentRadius === radiusGoal)
-		radiusGoal = randomInt(50, 400);
+		radiusGoal = randomInt(10, 300);
 
 	currentRadius += (currentRadius < radiusGoal)? 1 : -1;
 	dist++;
