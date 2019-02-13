@@ -17,4 +17,8 @@ class Vector {
 	static multiply(v, value) {
 		return new Vector(v.x*value, v.y*value);
 	}
+	
+	static div(v, value) {
+		return new Vector(v.x/value, v.y/value);
+	}
 }
