@@ -4,8 +4,7 @@ let tickContainer;
 let fpsCursor;
 
 let dist = 0;
-let radiusGoal = 100;
-let currentRadius = 200;
+const TRAJECTORY_RADIUS = 200;
 
 function setup() {
     tickContainer = document.getElementById("tick-container");
@@ -15,32 +14,26 @@ function setup() {
         wantedFPS = fpsCursor.value;
     });
 
-    fpsCursor.value = wantedFPS = 35;
+    wantedFPS = fpsCursor.value;
 }
 
 function loop() {
-    tickContainer.innerHTML = String(tick());
+    let deltaTime = tick();
+
+    tickContainer.innerHTML = String(deltaTime);
 
     background(new Color(200, 100, 10, 1, ColorType.HSL));
     drawCircle();
 
-    if (dist >= 360) {
-        dist = 0;
-    }
-
-    if (currentRadius === radiusGoal) {
-        radiusGoal = randomInt(10, 300);
-    }
-
-    currentRadius += (currentRadius < radiusGoal) ? 1 : -1;
-    dist++;
+    dist += (deltaTime / 15) % 360;
 }
 
 function drawCircle() {
     fill(new Color(255));
 
-    let x = currentRadius * Math.cos(dist * Math.PI / 30);
-    let y = currentRadius * Math.sin(dist * Math.PI / 30);
-
-    circle(canvas.width / 2 + x, canvas.height / 2 + y, 50);
+    circle(
+        canvas.width / 2 + TRAJECTORY_RADIUS * Math.cos(dist * Math.PI / 30),
+        canvas.height / 2 + TRAJECTORY_RADIUS * Math.sin(dist * Math.PI / 30),
+        50
+    );
 }
