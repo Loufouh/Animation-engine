@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<title>Animation's engine</title>
+    <meta charset="utf-8"/>
+    <title>Animation's engine</title>
 
-	<script src="modules/math/random.js"></script>
-	<script src="modules/math/Vector.js"></script>
+    <script src="modules/math/random.js"></script>
+    <script src="modules/math/Vector.js"></script>
 
-	<script src="modules/drawJs/coordinate.js"></script>
-	<script src="modules/drawJs/ColorType.js"></script>
-	<script src="modules/drawJs/Color.js"></script>
-	<script src="modules/drawJs/imageData.js"></script>
-	<script src="modules/drawJs/shapes.js"></script>
-	<script src="modules/drawJs/style.js"></script>
-	<script src="modules/drawJs/text.js"></script>
+    <script src="modules/drawJs/coordinate.js"></script>
+    <script src="modules/drawJs/ColorType.js"></script>
+    <script src="modules/drawJs/Color.js"></script>
+    <script src="modules/drawJs/imageData.js"></script>
+    <script src="modules/drawJs/shapes.js"></script>
+    <script src="modules/drawJs/style.js"></script>
+    <script src="modules/drawJs/text.js"></script>
 
-	<script src="modules/error.js"></script>
+    <script src="modules/error.js"></script>
 
-	<script src="src/engine/fps.js"></script>
-	<script src="src/engine/loop_control.js"></script>
-	<script src="src/engine/initialize.js"></script>
-	<script src="src/engine/tick.js"></script>
+    <script src="src/engine/fps.js"></script>
+    <script src="src/engine/loop_control.js"></script>
+    <script src="src/engine/initialize.js"></script>
+    <script src="src/engine/tick.js"></script>
 
-	<script src="src/sketch.js"></script>
+    <script src="src/sketch.js"></script>
 </head>
 <body>
-	<label>Tick: <span id="tick-container"></span> ms</label>
+    <label>Tick: <span id="tick-container"></span> ms</label>
     <div>
-		<canvas height="700" width="800"></canvas>
-	</div>
-	<label for="fps-control">FPS control : </label>
-	<input name="fps-control" id="fps-control" type="range" min="1" max="60">
+        <canvas height="700" width="800"></canvas>
+    </div>
+    <label for="fps-control">FPS control : </label>
+    <input name="fps-control" id="fps-control" type="range" min="1" max="60">
 </body>
 </html>
